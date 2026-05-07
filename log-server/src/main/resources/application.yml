@@ -1,0 +1,46 @@
+server:
+  port: 8081 # 기본 8080에서 8081로 변경 (가이드봇 본체와 포트 충돌 방지)
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    # [수정] stringtype=unspecified 추가: JSON 데이터를 문자열로 보낼 때 DB가 알아서 타입을 파악하게 도와줍니다.
+    url: jdbc:postgresql://localhost:5433/sparky?stringtype=unspecified
+    username: sparky
+    password: sparky1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        # [추가] 성능 최적화: 로그를 하나씩 저장하지 않고 50개씩 묶어서 한 번에 저장합니다. (Batch Insert)
+        jdbc:
+          batch_size: 50
+        order_inserts: true
+        order_updates: true
+        # [추가] PostgreSQL 전용 Dialect (버전에 따라 생략 가능하지만 명시하면 안정적임)
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # [추가] Jackson 설정: JSON 데이터를 주고받을 때 날짜 형식을 깔끔하게 처리합니다.
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+log:
+  api-key: ${LOG_API_KEY:sparky-log-api-key-2026}
+
+cors:
+  allowed-origins: ${ALLOWED_ORIGINS:http://localhost:3000}
+
+rate-limit:
+  requests-per-minute: 30
+
+db:
+  maintenance:
+    retention-days: 90
+    warn-rows: 500000
+    warn-size-mb: 500

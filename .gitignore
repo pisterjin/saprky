@@ -1,0 +1,69 @@
+# Operating System
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Node.js / frontend
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Next.js build output
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.vercel/
+frontend/next-env.d.ts
+
+# Local env files
+.env
+.env.*
+*.local
+!env.example
+!.env.example
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/.Python
+**/venv/
+**/.venv/
+**/env/
+**/ENV/
+**/pip-log.txt
+
+# Java / Maven / Gradle
+log-server/target/
+log-server/*.class
+log-server/*.jar
+log-server/.mvn/
+log-server/build/
+log-server/.gradle/
+
+# Docker volume data
+**/postgres_data/
+
+# Logs
+*.log
+
+# Misc
+*.pem
+
+# ai-server
+ai-server/scripts/build_index.py
+
+# md 파일
+sparky3/**/*.md

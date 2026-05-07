@@ -1,0 +1,97 @@
+/* Pretendard 웹폰트 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+/* Paperlogy 9 Black — SPARKY 로고 전용 */
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('/fonts/Paperlogy-9Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:            #E3F6F4;
+  --surface-ai:    #BBE9F3;
+  --surface-user:  #7ECDC7;
+  --surface-card:  #F0FAFA;
+  --surface-header:#2BBFB3;
+  --primary:       #FFFFFF;
+  --primary-400:   #E0F7F6;
+  --warm-300:      #29B5B0;
+  --warm-600:      #007A75;
+  --warm-900:      #003D3B;
+}
+
+/* 다크모드 */
+.dark {
+  --bg:            #0B0F15;
+  --surface-ai:    #0C2432;
+  --surface-user:  #20485E;
+  --surface-card:  #0C2432;
+  --surface-header:#0B0F15;
+  --primary:       #F94224;
+  --primary-400:   #FF6B50;
+  --warm-300:      #9AB6C0;
+  --warm-600:      #41728B;
+  --warm-900:      #EBF7F3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  color: var(--warm-900);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* 스크롤바 숨김 */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* 테마 스크롤바 (개인정보처리방침 등) */
+.scrollbar-themed::-webkit-scrollbar        { width: 4px; }
+.scrollbar-themed::-webkit-scrollbar-track  { background: transparent; }
+.scrollbar-themed::-webkit-scrollbar-thumb  { background: #29B5B0; border-radius: 4px; }
+.scrollbar-themed::-webkit-scrollbar-thumb:hover { background: #007A75; }
+/* Firefox */
+.scrollbar-themed { scrollbar-width: thin; scrollbar-color: #29B5B0 transparent; }
+
+.dark .scrollbar-themed::-webkit-scrollbar-track  { background: #0B0F15; }
+.dark .scrollbar-themed::-webkit-scrollbar-thumb       { background: #20485E; border-radius: 4px; }
+.dark .scrollbar-themed::-webkit-scrollbar-thumb:hover { background: #41728B; }
+.dark .scrollbar-themed { scrollbar-color: #20485E #0B0F15; }
+
+/* 타이핑 애니메이션 (ER-001) */
+@keyframes typing-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30%           { transform: translateY(-6px); opacity: 1; }
+}
+.typing-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--warm-300);
+  animation: typing-dot 1.2s infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* 정책 카드 아코디언 아이콘 */
+.policy-icon { filter: brightness(0) sepia(1) saturate(4) hue-rotate(75deg) brightness(0.35); }
+.dark .policy-icon { filter: brightness(0) saturate(100%) invert(68%) sepia(35%) saturate(800%) hue-rotate(220deg); }
+
+/* 스켈레톤 shimmer */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #BBE9F3 25%, #E3F6F4 50%, #BBE9F3 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}

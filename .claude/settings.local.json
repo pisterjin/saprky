@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ollama search *)",
+      "Bash(where ollama *)",
+      "Bash(cmd /c \"ollama run gemma4 --help\")",
+      "Bash(cmd /c \"ollama list\")",
+      "Bash(cmd /c \"where ollama\")",
+      "Bash(cmd /c \"psql --version\")",
+      "Bash(cmd /c \"where psql\")",
+      "Bash(cmd /c \"pg_config --version\")",
+      "Bash(cmd /c \"dir \\\\\"C:\\\\Program Files\\\\PostgreSQL\\\\\" /b\")",
+      "Bash(cmd /c \"dir \\\\\"C:\\\\Program Files\\\\\" /b\")",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

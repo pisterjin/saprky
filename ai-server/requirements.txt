@@ -1,0 +1,37 @@
+# 서버
+fastapi~=0.115.0
+uvicorn[standard]~=0.30.0
+
+# 환경변수
+python-dotenv==1.0.1
+
+# 데이터 검증
+pydantic~=2.9.0
+
+# LangChain(올라마 및 gpt 둘 다 번갈아 사용)
+langchain==0.3.25
+langchain-core==0.3.58
+langchain-community==0.3.23
+langchain-huggingface==0.1.2
+langchain-text-splitters
+langchain-ollama
+langchain-openai
+
+# 벡터 DB
+faiss-cpu>=1.9.0
+
+# 임베딩
+sentence-transformers
+
+# HTTP 클라이언트
+httpx~=0.28.1
+requests==2.32.3
+
+# DB 연결
+asyncpg~=0.30.0
+
+# 스케줄러
+apscheduler~=3.10.0
+
+# 캐싱
+cachetools~=5.5.0

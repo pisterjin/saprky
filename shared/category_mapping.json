@@ -1,0 +1,40 @@
+{
+  "categories": [
+    { "key": "job",     "label": "일자리",   "color": "#E8536A" },
+    { "key": "housing", "label": "주거",     "color": "#ED7A8D" },
+    { "key": "edu",     "label": "교육",     "color": "#F5AEBA" },
+    { "key": "finance", "label": "금융",     "color": "#FAD0D7" },
+    { "key": "welfare", "label": "복지문화", "color": "#7A6A65" },
+    { "key": "rights",  "label": "참여권리", "color": "#C4B5B0" },
+    { "key": "etc",     "label": "기타",     "color": "#EDE3DF" }
+  ],
+  "ontong_policy_realm_map": {
+    "023010": "job",
+    "023020": "housing",
+    "023030": "edu",
+    "023040": "finance",
+    "023050": "welfare",
+    "023060": "rights"
+  },
+  "bojogeum_life_map": {
+    "취업": "job",
+    "창업": "job",
+    "주거": "housing",
+    "교육": "edu",
+    "금융": "finance",
+    "문화": "welfare",
+    "복지": "welfare"
+  },
+  "llm_domain_map": {
+    "일자리": "job",
+    "주거": "housing",
+    "교육": "edu",
+    "금융": "finance",
+    "복지문화": "welfare",
+    "참여권리": "rights",
+    "기타": "etc",
+    "취업": "job",
+    "복지": "welfare",
+    "판단불가": "etc"
+  }
+}

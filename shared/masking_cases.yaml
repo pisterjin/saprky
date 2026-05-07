@@ -1,0 +1,46 @@
+positive:
+  - id: rrn_basic
+    input: "제 주민번호 900101-1234567 입니다"
+    expected: "제 주민번호 ######-******* 입니다"
+    should_hit: true
+  - id: card_basic
+    input: "카드 1234-5678-9012-3456"
+    expected: "카드 ****-****-****-****"
+    should_hit: true
+  - id: phone_dash
+    input: "연락처 010-1234-5678"
+    expected: "연락처 010-****-****"
+    should_hit: true
+  - id: phone_dot
+    input: "010.1234.5678"
+    expected: "010-****-****"
+    should_hit: true
+  - id: account
+    input: "계좌번호: 110-1234-567890"
+    expected: "계좌번호: [계좌번호]"
+    should_hit: true
+  - id: email
+    input: "제 이메일은 hong@example.com 입니다"
+    expected: "제 이메일은 [이메일] 입니다"
+    should_hit: true
+  - id: combined
+    input: "이름 홍길동, 010-1111-2222, a@b.co"
+    expected: "이름 홍길동, 010-****-****, [이메일]"
+    should_hit: true
+
+negative:
+  - id: region_name
+    input: "서울 마포구에 사는 29살입니다"
+    should_hit: false
+  - id: name_kept
+    input: "저는 김철수입니다"
+    should_hit: false
+  - id: age_number
+    input: "29세 남성"
+    should_hit: false
+  - id: money
+    input: "월세 500000원"
+    should_hit: false
+  - id: year
+    input: "2024년도 정책"
+    should_hit: false
